@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="producttop">20dp</dimen>
+    <dimen name="selectionbtn">20dp</dimen>
+    <dimen name="productleft">20dp</dimen>
+    <dimen name="borderradius">20dp</dimen>
+    <dimen name="butntop">1</dimen>
+    <dimen name="margintop">10dp</dimen>
+    <dimen name="itemtop">10dp</dimen>
+    <dimen name="detailsleft">15dp</dimen>
+    <dimen name="itemdescription">20dp</dimen>
+    <dimen name="itemdetailtop">15dp</dimen>
+    <dimen name="buttentop">5dp</dimen>
+    <dimen name="butenleft1">40dp</dimen>
+    <dimen name="butentop">3dp</dimen>
+    <dimen name="marginleft">32dp</dimen>
+    <dimen name="adminbtntop">100dp</dimen>
+    <dimen name="btnrop4">60dp</dimen>
+    <dimen name="fbtntop">200dp</dimen>
+    <dimen name="btnradius">20dp</dimen>
+    <dimen name="btntop30dp">40dp</dimen>
+    <dimen name="margintop1">60dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+</resources>

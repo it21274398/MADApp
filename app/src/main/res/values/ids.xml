@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tv_loading_data" type="id" />
+    <item name="item_category_recycler_view" type="id" />
+    <item name="rv_item" type="id" />
+</resources>
