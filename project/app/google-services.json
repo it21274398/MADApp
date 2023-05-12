@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "80574897968",
+    "firebase_url": "https://madprojectrealtimefirebase-default-rtdb.firebaseio.com",
+    "project_id": "madprojectrealtimefirebase",
+    "storage_bucket": "madprojectrealtimefirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80574897968:android:3553f4616d3a73c6b6b2f5",
+        "android_client_info": {
+          "package_name": "com.example.madproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "80574897968-51amo0002ip8d7d09kc21rhvmh9pv1pa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0eayyiVvsrBcVe-Vr319iZnh4aIfgCO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "80574897968-51amo0002ip8d7d09kc21rhvmh9pv1pa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
