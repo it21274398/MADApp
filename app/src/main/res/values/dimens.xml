@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="add_button_marginTop">24dp</dimen>
+    <dimen name="add_button_marginStart">24dp</dimen>
+    <dimen name="add_button_marginEnd">24dp</dimen>
+    <dimen name="add_button_margin">24dp</dimen>
+    <dimen name="delete_button_marginStart">49dp</dimen>
+    <dimen name="delete_button_marginTop">14dp</dimen>
+    <dimen name="delete_button_marginEnd">53dp</dimen>
+    <dimen name="delete_button_marginBottom">10dp</dimen>
+    <dimen name="edit_button_marginStart">49dp</dimen>
+    <dimen name="edit_button_marginTop">11dp</dimen>
+    <dimen name="edit_button_marginEnd">53dp</dimen>
+    <dimen name="edit_button_marginBottom">22dp</dimen>
+    <dimen name="additem_button_margin">24dp</dimen>
+    <dimen name="additem_blackgrount_marginStart">11dp</dimen>
+    <dimen name="additem_blackgrount_marginTop">37dp</dimen>
+    <dimen name="additem_blackgrount_marginEnd">13dp</dimen>
+    <dimen name="additem_blackgrount_marginBottom">25dp</dimen>
+</resources>

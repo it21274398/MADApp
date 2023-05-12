@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">MyCRUD</string>
+    <string name="profile_Name">Anuga Mindinu</string>
+    <string name="profile_Gmail">mindinua@gmail.com</string>
+    <string name="main_button_1">Store</string>
+    <string name="main_button_2">Chat With Us</string>
+    <string name="main_button_3">Log out</string>
+    <string name="password">Password :</string>
+    <string name="mobile">Mobile :</string>
+    <string name="country">Country :</string>
+    <string name="address">Address :</string>
+    <string name="postalcode">Postalcode :</string>
+    <string name="change_password">Change</string>
+    <string name="mobile_data">+94-000000000</string>
+    <string name="country_data">Sri Lanka</string>
+    <string name="address_data">SL - Street - 21-no 34</string>
+    <string name="postalcode_data">78625246</string>
+    <string name="Edit_profile">Edit Profile</string>
+
+    <string name="hand_made1">Rs.400.00</string>
+    <string name="hand_made2">Rs.200.00</string>
+    <string name="hand_made3">Rs.100.00</string>
+    <string name="hand_made4">Rs.700.00</string>
+    <string name="edit_store">Edit Store</string>
+
+    <string name="add">Add Items</string>
+    <string name="delet">Delet</string>
+    <string name="edit">Edit</string>
+    <string name="h1">Sri Lankan Hand Carved Wood Wall Decor Fire Mask 10"</string>
+    <string name="h2">Handmade Coconut Shell Pendant Necklace</string>
+    <string name="h3">Handmade Wooden Small Jewellery Box </string>
+    <string name="h4">Coconut Shell Spoon</string>
+
+
+    <string name="add_store">Add to Store</string>
+    <string name="pic"> Add the Picture</string>
+    <string name="description">Description</string>
+    <string name="item_name">Name</string>
+    <string name="price">Price</string>
+    <string name="catagory">Catagory</string>
+
+    <string name="edit_profileName">Name :</string>
+    <string name="edit_profileGmail">Gmail</string>
+    <string name="edit_profileGmail_data">Change</string>
+    <string name="edit_profileName_data">Change</string>
+    <string name="edit_mobile_data">Change</string>
+    <string name="edit_country_data">Change</string>
+    <string name="edit_address_data">Change</string>
+    <string name="edit_postalcode_data">Change</string>
+    <string name="save">Save</string>
+
+    <string name="note1">Good and quality product.</string>
+</resources>
