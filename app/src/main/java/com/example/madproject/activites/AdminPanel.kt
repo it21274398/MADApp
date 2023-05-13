@@ -14,18 +14,16 @@ import com.google.firebase.database.FirebaseDatabase
 
 class AdminPanel : AppCompatActivity() {
 
-    fun gotoupdatePage(view: View) {
-        val intent = Intent(this, updatedilog::class.java)
-        startActivity(intent)
-    }
     private lateinit var itemName: EditText
     private lateinit var itemPrice: EditText
     private lateinit var itemimage: EditText
     private lateinit var btnsavedata: Button
 
-
     private lateinit var dbRef: DatabaseReference
 
+    companion object {
+        const val EDIT_ITEM_REQUEST_CODE = 100
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,26 +38,29 @@ class AdminPanel : AppCompatActivity() {
 
         btnsavedata.setOnClickListener {
             saveitemdata()
-
         }
-
     }
-    private fun saveitemdata(){
+
+    private fun saveitemdata() {
         val itName = itemName.text.toString()
         val itPrice = itemPrice.text.toString()
         val itimage = itemimage.text.toString()
 
-        if (itName.isEmpty()){
-            itemName.error = "please enter item name"
+        if (itName.isEmpty()) {
+            itemName.error = "Please enter item name"
+            return
         }
-        if (itPrice.isEmpty()){
-            itemPrice.error = "please enter item price"
+        if (itPrice.isEmpty()) {
+            itemPrice.error = "Please enter item price"
+            return
         }
-        if (itimage.isEmpty()){
-            itemimage.error = "please enter item image"
+        if (itimage.isEmpty()) {
+            itemimage.error = "Please enter item image"
+            return
         }
-        //getting values
-        val itemId = dbRef.push().key!!
+
+        // Generating a new item ID
+        val itemId = dbRef.push().key ?: ""
         val item = ItemModel(itemId, itName, itPrice, itimage)
 
         dbRef.child(itemId).setValue(item)
@@ -75,5 +76,24 @@ class AdminPanel : AppCompatActivity() {
             }
     }
 
-}
+    fun gotoupdatePage(view: View) {
+        val intent = Intent(this, updatedilog::class.java)
+        intent.putExtra("itemId", "") // Pass the itemId of the item being edited
+        intent.putExtra("itemName", "") // Pass the current item name
+        intent.putExtra("itemPrice", "") // Pass the current item price
+        intent.putExtra("itemDetails", "") // Pass the current item details
+        startActivityForResult(intent, EDIT_ITEM_REQUEST_CODE)
+    }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == EDIT_ITEM_REQUEST_CODE && resultCode == RESULT_OK) {
+            val updatedItemName = data?.getStringExtra("updatedItemName")
+            val updatedItemPrice = data?.getStringExtra("updatedItemPrice")
+            val updatedItemDetails = data?.getStringExtra("updatedItemDetails")
+
+            // Perform necessary operations with the updated data
+        }
+    }
+}

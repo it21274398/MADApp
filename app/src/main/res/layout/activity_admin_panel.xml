@@ -50,11 +50,12 @@
                     android:layout_marginLeft="@dimen/butenleft1"
                     android:layout_marginTop="@dimen/itemtop"
                     android:backgroundTint="#1A237E"
-                    android:text="@string/updateitem"
+                    android:text="EDIT ITEM"
                     app:cornerRadius="@dimen/btnradius" />
 
                 <Button
-                    android:id="@+id/deletebtn"
+
+                    android:id="@+id/btndelete"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/butenleft1"

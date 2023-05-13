@@ -23,9 +23,7 @@ class itemCategory : AppCompatActivity() {
     private lateinit var Fitemname: TextView
     private lateinit var Fitemprice: TextView
     private lateinit var Fitemdis: TextView
-    private lateinit var btnUpdate: Button
     private lateinit var btndelete: Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_category)
@@ -34,34 +32,21 @@ class itemCategory : AppCompatActivity() {
         Fitemname = findViewById(R.id.Fitemname)
         Fitemprice = findViewById(R.id.Fitemprice)
         Fitemdis = findViewById(R.id.Fitemdis)
-        btnUpdate = findViewById(R.id.updatebtn) // Initialize btnUpdate
-        btndelete = findViewById(R.id.deletebtn) // Initialize btndelete
 
         setValuesToViews()
 
-
-//        btnUpdate.setOnClickListener {
-//            val intent = Intent(this@itemCategory, updatedilog::class.java)
-//            intent.putExtra("itemId", FitemId.text.toString())
-//            intent.putExtra("itemName", Fitemname.text.toString())
-//            intent.putExtra("itemPrice", Fitemprice.text.toString())
-//            intent.putExtra("itemDettails", Fitemdis.text.toString())
-//            startActivityForResult(intent, UPDATE_REQUEST_CODE)
-//        }
-
-
         btndelete.setOnClickListener {
-            deleteRecord(
-                intent.getStringExtra("itemId").toString()
-            )
+            val id = FitemId.text.toString()
+            removeItem(id)
         }
+
     }
 
 
     private fun deleteRecord(
         id:String
     ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("item").child(id)
+        val dbRef = FirebaseDatabase.getInstance().getReference("Item").child(id)
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener{
@@ -80,10 +65,16 @@ class itemCategory : AppCompatActivity() {
         Fitemdis.text = intent.getStringExtra("itemDettails")
     }
 
-
-
-//    companion object {
-//        private const val UPDATE_REQUEST_CODE = 123
-//    }
+    private fun removeItem(itemId: String) {
+        val dbRef = FirebaseDatabase.getInstance().getReference("Item").child(itemId)
+        dbRef.removeValue()
+            .addOnSuccessListener {
+                Toast.makeText(this, "Item removed successfully", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Failed to remove item: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
 
 }
