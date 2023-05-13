@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".CartListActivity">
+
+
+    <LinearLayout
+        android:background="#FF03DAC5"
+        android:id="@+id/panel"
+        android:weightSum="16"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageNav"
+            android:layout_width="0dp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            app:srcCompat="@drawable/baseline_navigate_before_24"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/tvProductList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="11"
+            android:text="@string/product_list"
+            android:textColor="#202A44"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"/>
+
+        <FrameLayout
+            android:id="@+id/btnCart"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageCart"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/baseline_shopping_cart_24"
+                android:contentDescription="@string/todo1" />
+
+            <com.nex3z.notificationbadge.NotificationBadge
+                android:id="@+id/badge"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="@id/imageCart"
+                android:layout_marginTop="@id/imageCart"
+                app:nbMaxTextLength="2" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_product"
+        android:layout_width="match_parent"
+        android:layout_height="553dp"
+        android:layout_below="@+id/panel"
+        android:layout_marginStart="@+id/panel"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="@+id/panel"
+        android:padding="8dp" />
+
+
+</RelativeLayout>
