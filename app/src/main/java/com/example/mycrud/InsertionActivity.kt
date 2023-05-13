@@ -25,6 +25,7 @@ class InsertionActivity : AppCompatActivity() {
 
     var sImage:String? = null
 
+
     private lateinit var etProductName: EditText
     private lateinit var etProductPrice: EditText
     private lateinit var etProductCatagory: EditText
@@ -59,7 +60,7 @@ class InsertionActivity : AppCompatActivity() {
         val ProductCatagory = etProductCatagory.text.toString()
         val sImage = sImage.toString()
 
-
+        //vadlidating if the value is provided or not
         if (ProductName.isEmpty()) {
             etProductName.error = "Please enter name"
         }
@@ -74,6 +75,8 @@ class InsertionActivity : AppCompatActivity() {
         val ProductId = dbRef.push().key!!
 
         val employee = EmployeeModel(ProductId, ProductName, ProductPrice, ProductCatagory, sImage)
+
+        //saving data
 
         dbRef.child(ProductId).setValue(employee)
             .addOnCompleteListener {
@@ -91,6 +94,7 @@ class InsertionActivity : AppCompatActivity() {
 
     }
 
+    //insert image
     @RequiresApi(Build.VERSION_CODES.O)
     fun insert_Img(view: View) {
 
@@ -98,6 +102,8 @@ class InsertionActivity : AppCompatActivity() {
         myfileintent.type = "image/*"
         launcher.launch(myfileintent)
     }
+
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult())

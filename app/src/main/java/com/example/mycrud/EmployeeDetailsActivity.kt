@@ -29,6 +29,8 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         initView()
         setValuesToViews()
 
+
+        //click button go to UpdateActivity
         btnUpdate.setOnClickListener {
             openUpdateDialog(
                 intent.getStringExtra("ProductId").toString(),
@@ -36,6 +38,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
             )
         }
 
+        //click button go to DeleteActivity
         btnDelete.setOnClickListener {
             deleteRecord(
                 intent.getStringExtra("ProductId").toString()
@@ -62,6 +65,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
 
     }
 
+    //delete record
     private fun deleteRecord(
         id: String
     ){
@@ -79,6 +83,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         }
     }
 
+    //update dialog
     @SuppressLint("MissingInflatedId")
     private fun openUpdateDialog(
         ProductId: String,
@@ -124,6 +129,8 @@ class EmployeeDetailsActivity : AppCompatActivity() {
             alertDialog.dismiss()
         }
     }
+
+    //update data to firebase
 
     private fun updateEmpData(
         id: String,

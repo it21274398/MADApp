@@ -16,6 +16,8 @@ class EmpAdapter(private val empList: ArrayList<EmployeeModel>) :
         fun onItemClick(position: Int)
     }
 
+
+    //set click listener
     fun setOnItemClickListener(clickListener: onItemClickListener) {
         mListener = clickListener
     }
@@ -39,6 +41,8 @@ class EmpAdapter(private val empList: ArrayList<EmployeeModel>) :
         return empList.size
     }
 
+
+    //view holder class
     class ViewHolder(itemView: View, clickListener: onItemClickListener) :
         RecyclerView.ViewHolder(itemView) {
 

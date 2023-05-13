@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.SearchView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class FetchingActivity : AppCompatActivity() {
 
@@ -21,13 +24,19 @@ class FetchingActivity : AppCompatActivity() {
     private lateinit var empList: ArrayList<EmployeeModel>
     private lateinit var dbRef: DatabaseReference
 
+
+
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fetching)
 
+
+        //button to insert data
         btnInsertData = findViewById(R.id.btnInsertData)
 
+        //click button go to InsertionActivity
         btnInsertData.setOnClickListener {
             val intent = Intent(this, InsertionActivity::class.java)
             startActivity(intent)
@@ -44,6 +53,8 @@ class FetchingActivity : AppCompatActivity() {
         getEmployeesData()
 
     }
+
+
 
     private fun getEmployeesData() {
 
@@ -82,6 +93,7 @@ class FetchingActivity : AppCompatActivity() {
                     tvLoadingData.visibility = View.GONE
                 }
             }
+            
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
