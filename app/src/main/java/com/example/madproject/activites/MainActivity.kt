@@ -15,10 +15,11 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, itemCategory1::class.java)
         startActivity(intent)
     }
-    fun gotoJewelleryActivity(view: View) {
+    fun gotojualleryActivity(view: View) {
         val intent = Intent(this, itemCategory2::class.java)
         startActivity(intent)
-    }fun gotoKitchendiningActivity(view: View) {
+    }
+    fun gotoKitchendiningActivity(view: View) {
         val intent = Intent(this, itemCategory3::class.java)
         startActivity(intent)
     }

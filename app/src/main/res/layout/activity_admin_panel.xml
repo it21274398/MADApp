@@ -43,7 +43,8 @@
                     app:srcCompat="@drawable/_907895086152_2" />
 
                 <Button
-                    android:id="@+id/button15"
+                    android:onClick="gotoupdatePage"
+                    android:id="@+id/updatebtn"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/butenleft1"
@@ -53,7 +54,7 @@
                     app:cornerRadius="@dimen/btnradius" />
 
                 <Button
-                    android:id="@+id/button16"
+                    android:id="@+id/deletebtn"
                     android:layout_width="290dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/butenleft1"
@@ -83,7 +84,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="15dp"
-                android:text="Enter Item Name" />
+                android:text="Name" />
 
             <EditText
                 android:id="@+id/itemPrice"
@@ -95,7 +96,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="15dp"
-                android:text="Enter Item Price" />
+                android:text="Price" />
 
             <EditText
                 android:id="@+id/itemimage"
@@ -107,7 +108,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:padding="15dp"
-                android:text="Add a discripyion" />
+                android:text="Discripyion" />
 
             <Button
                 android:id="@+id/btnsavedata"

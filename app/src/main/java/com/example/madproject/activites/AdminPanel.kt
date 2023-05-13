@@ -1,7 +1,9 @@
 package com.example.madproject.activites
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -12,13 +14,16 @@ import com.google.firebase.database.FirebaseDatabase
 
 class AdminPanel : AppCompatActivity() {
 
+    fun gotoupdatePage(view: View) {
+        val intent = Intent(this, updatedilog::class.java)
+        startActivity(intent)
+    }
     private lateinit var itemName: EditText
     private lateinit var itemPrice: EditText
     private lateinit var itemimage: EditText
     private lateinit var btnsavedata: Button
 
 
-    private lateinit var btnfetchdata:Button
     private lateinit var dbRef: DatabaseReference
 
 
@@ -40,9 +45,9 @@ class AdminPanel : AppCompatActivity() {
 
     }
     private fun saveitemdata(){
-        var itName = itemName.text.toString()
-        var itPrice = itemPrice.text.toString()
-        var itimage = itemimage.text.toString()
+        val itName = itemName.text.toString()
+        val itPrice = itemPrice.text.toString()
+        val itimage = itemimage.text.toString()
 
         if (itName.isEmpty()){
             itemName.error = "please enter item name"
@@ -55,11 +60,11 @@ class AdminPanel : AppCompatActivity() {
         }
         //getting values
         val itemId = dbRef.push().key!!
-        var item = ItemModel(itemId, itName, itPrice, itimage)
+        val item = ItemModel(itemId, itName, itPrice, itimage)
 
         dbRef.child(itemId).setValue(item)
             .addOnCompleteListener {
-                Toast.makeText(this, "data added successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Data added successfully", Toast.LENGTH_SHORT).show()
 
                 itemName.text.clear()
                 itemPrice.text.clear()

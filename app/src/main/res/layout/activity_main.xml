@@ -48,7 +48,7 @@
                 app:cornerRadius="@dimen/borderradius" />
 
             <Button
-                android:onClick="gotoJewelleryActivity"
+                android:onClick="gotojualleryActivity"
                 android:id="@+id/seeitems"
                 android:layout_width="370dp"
                 android:layout_height="110dp"

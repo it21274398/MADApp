@@ -1,8 +1,10 @@
 package com.example.madproject.activites
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -12,7 +14,10 @@ import com.example.madproject.R
 import com.example.madproject.models.ItemModel
 import com.google.firebase.database.FirebaseDatabase
 
+
 class itemCategory : AppCompatActivity() {
+
+
 
     private lateinit var FitemId: TextView
     private lateinit var Fitemname: TextView
@@ -34,12 +39,16 @@ class itemCategory : AppCompatActivity() {
 
         setValuesToViews()
 
-        btnUpdate.setOnClickListener {
-            UpdateDilog(
-                intent.getStringExtra("itemId").toString(),
-                intent.getStringExtra("itemName").toString()
-            )
-        }
+
+//        btnUpdate.setOnClickListener {
+//            val intent = Intent(this@itemCategory, updatedilog::class.java)
+//            intent.putExtra("itemId", FitemId.text.toString())
+//            intent.putExtra("itemName", Fitemname.text.toString())
+//            intent.putExtra("itemPrice", Fitemprice.text.toString())
+//            intent.putExtra("itemDettails", Fitemdis.text.toString())
+//            startActivityForResult(intent, UPDATE_REQUEST_CODE)
+//        }
+
 
         btndelete.setOnClickListener {
             deleteRecord(
@@ -47,6 +56,7 @@ class itemCategory : AppCompatActivity() {
             )
         }
     }
+
 
     private fun deleteRecord(
         id:String
@@ -70,56 +80,10 @@ class itemCategory : AppCompatActivity() {
         Fitemdis.text = intent.getStringExtra("itemDettails")
     }
 
-    private fun UpdateDilog(
-        itemId : String,
-        itemName : String
-    ){
-        val mDilog = AlertDialog.Builder(this)
-        val inflater = layoutInflater
-        val mDialogView = inflater.inflate(R.layout.activity_updatedilog,null)
 
-        mDilog.setView(mDialogView)
 
-        val etItemName = mDialogView.findViewById<EditText>(R.id.etName)
-        val etItemPrice = mDialogView.findViewById<EditText>(R.id.etPrice)
-        val etItemDetails = mDialogView.findViewById<EditText>(R.id.etDetails)
-        val btnUpdteData = mDialogView.findViewById<Button>(R.id.btnUpdate)
-
-        etItemName.setText(intent.getStringExtra("itemName").toString())
-        etItemPrice.setText(intent.getStringExtra("itemPrice").toString())
-        etItemDetails.setText(intent.getStringExtra("itemDettails").toString())
-
-        mDilog.setTitle("Updating $itemName Record")
-
-        val alertDilog = mDilog.create()
-        alertDilog.show()
-
-        btnUpdteData.setOnClickListener {
-            updateItemData(
-                itemId,
-                etItemName.text.toString(),
-                etItemPrice.text.toString(),
-                etItemDetails.text.toString()
-            )
-            Toast.makeText(applicationContext, "Item Data Updated", Toast.LENGTH_LONG).show()
-            //we are setting updated data to our textview
-            Fitemname.text = etItemName.text.toString()
-            Fitemprice.text = etItemPrice.text.toString()
-            Fitemdis.text = etItemDetails.text.toString()
-
-            alertDilog.dismiss()
-        }
-
-    }
-    private fun updateItemData(
-    id:String,
-    name:String,
-    price:String,
-    details:String
-    ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("item").child(id)
-        val itemInfo = ItemModel(id, name, price, details)
-        dbRef.setValue(itemInfo)
-    }
+//    companion object {
+//        private const val UPDATE_REQUEST_CODE = 123
+//    }
 
 }
